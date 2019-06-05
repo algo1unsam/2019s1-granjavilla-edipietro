@@ -9,7 +9,8 @@ class Especie {
 			game.removeVisual(self)
 			granjero.agregoEspecie()
 		}
-		else game.say(self,"No se puede cosechar")
+		else 
+		throw new Exception("No se puede cosechar")
 	}
 
 	method cantidadMonedas()

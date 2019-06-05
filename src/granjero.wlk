@@ -41,7 +41,7 @@ object granjero {
 	method nadaSembrado() = game.colliders(self).isEmpty()
 
 	method error() {
-		game.say(self, "No hay nada para regar")
+		throw new Exception ("No hay nada para regar")
 	}
 
 	method noHaynadaparaRegar() {

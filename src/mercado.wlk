@@ -29,7 +29,7 @@ class Mercado {
 			self.pagoA(persona)
 			self.entregolasEspecies(persona)
 			self.consultaStock()
-		} else game.say(self, "No me alcanzan las monedas")
+		} else throw new Exception (self, "No me alcanzan las monedas")
 	}
 
 	method pagoA(persona) {
