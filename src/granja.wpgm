@@ -1,0 +1,38 @@
+import wollok.game.*
+import granjero.*
+import especies.*
+import mercado.*
+
+program granjaGame {
+
+//	CONFIG	
+	game.title("granja")
+	game.height(15)
+	game.width(20)
+	game.ground("ground.png")
+
+
+	game.addVisual(granjero)
+
+	game.addVisual(new Mercado(position = game.at(1,10)))
+	game.addVisual(new Mercado(position = game.at(2,5)))
+	game.addVisual(new Mercado(position = game.at(3,8)))
+	game.addVisual(new Mercado(position = game.at(2,3)))
+    
+  
+	keyboard.up().onPressDo { granjero.move(granjero.position().up(1)) }
+	keyboard.down().onPressDo { granjero.move(granjero.position().down(1)) }
+	keyboard.left().onPressDo { granjero.move(granjero.position().left(1)) }
+	keyboard.right().onPressDo { granjero.move(granjero.position().right(1)) }
+	
+	keyboard.m().onPressDo { granjero.siembra(new SemillaMaiz()) }
+	keyboard.t().onPressDo { granjero.siembra(new SemillaTrigo()) }
+	keyboard.o().onPressDo { granjero.siembra(new SemillaTomaco()) }
+	keyboard.r().onPressDo { granjero.regar() }
+	keyboard.c().onPressDo { granjero.cosechar() }
+	keyboard.space().onPressDo { granjero.cuantoTengo() }
+	keyboard.v().onPressDo { granjero.vender() }
+
+	game.start()
+	}
+	
